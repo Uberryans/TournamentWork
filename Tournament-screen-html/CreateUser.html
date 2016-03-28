@@ -1,0 +1,25 @@
+<HTML>
+<BODY>
+<script language="javascript" type="text/javascript">
+function create(){
+	if(document.getElementById("password").value != document.getElementById("confirmPassword").value){
+		alert("Passwords do not match!");
+		return;
+	}	
+	window.history.back();
+	alert("User has been created!");
+}
+</script>
+<H2> Create User </H2>
+	Username: <input type="text" id="username"/><br/>
+	Password: <input type="text" id="password"/><br/>
+	Confirm Password: <input type="text" id="confirmPassword"/><br/>
+	Role: 	<select>
+			<option value="Organizer">Organizer</option>
+			<option value="Player">Player</option>
+			</select><br/>
+	Contact Email: <input type="text" id="email"/><br/>
+	<button id="createUser" onclick="create()">Create User</button>
+	<button id="cancel" onclick="cancel()">Cancel</button>
+</BODY>
+</HTML>

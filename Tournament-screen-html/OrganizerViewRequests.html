@@ -1,0 +1,117 @@
+<HTML> 
+<BODY> 
+<script language="javascript" type="text/javascript">
+var no_of_teams = 1;
+function create_team() 
+{
+	var player_names = "";
+    var players = document.getElementById("player_names");
+    for (var i = 0; i < players.options.length; i++)
+    {
+    	if (players.options[i].selected)
+    	{
+    		player_names = player_names + " " +  players.options[i].value;
+    		var parent = document.getElementById('player_names');
+    		var child = document.getElementById(players.options[i].value);
+    		parent.removeChild(child);
+    	}
+    }
+    var option_type = document.createElement("option");
+    var att = document.createAttribute("id");
+    att.val = "Team" + no_of_teams + "\n" + player_names;
+    option_type.setAttributeNode(att);
+    var node = document.createTextNode("Team" + no_of_teams + "\n" + player_names);
+    option_type.appendChild(node);
+    var element = document.getElementById("team_names");
+    element.appendChild(option_type);
+    no_of_teams++;
+}
+
+function add_player()
+{
+	var players = document.getElementById("player_names");
+	var team = document.getElementById("team_names");
+	var new_team_name = team.value;
+    if(new_team_name != ""){
+        alert(new_team_name);
+
+    	for (var i = 0; i < players.options.length; i++)
+        {
+        	if (players.options[i].selected)
+        	{
+        		new_team_name = new_team_name + " " +  players.options[i].value;
+        		var parent = document.getElementById('player_names');
+        		var child = document.getElementById(players.options[i].value);
+        		parent.removeChild(child);
+        	}
+        }
+        var option_type = document.createElement("option");
+        var att = document.createAttribute("id");
+
+        att.val = new_team_name;
+        option_type.setAttributeNode(att);
+        var node = document.createTextNode(new_team_name);
+        option_type.appendChild(node);
+
+        var parent = document.getElementById("team_names");
+        parent.appendChild(option_type); 
+        parent.removeChild(team.options[0]);
+    }
+    else{
+        alert("Team must be selected");
+    }
+}
+
+function view_player_info()
+{
+	alert("Player information not available right now");
+}
+
+function dismantle_team()
+{
+    var team = document.getElementById("team_names").value;
+    var arr = team.split(" ");
+    for(i = 1; i < arr.length; i++){
+        var option = document.createElement("option");
+        var att = document.createAttribute("id");
+        att.val = arr[i];
+        option.setAttributeNode(att);
+        var node = document.createTextNode(arr[i]);
+        option.appendChild(node);
+        var parent = document.getElementById("player_names");
+        parent.appendChild(option);
+    }
+    var teamSelect = document.getElementById("team_names");
+    teamSelect.remove(team);
+}
+function goBack(){
+    window.history.back();
+}
+
+</script>
+
+	<H2>Tournament Requests</H2>
+	<H3> Player Requests  </H3>
+	
+	<div id="entrants_name_div" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: 	scroll; width:150px;height:150px;border:0px solid #000;">
+		<select id="player_names" name="entrant_names" multiple>
+			<option id="Richa" value="Richa"> Richa </option> 
+			<option id="Buzz" value="Buzz"> Buzz </option> 
+			<option id="Ryan" value="Ryan"> Ryan </option> 
+		</select>
+	</div>
+
+	<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+		<button id="create_team" onclick="create_team()">Create Team</button>
+		<button id="add_player_to_team" onclick="add_player()">Add Player to Team</button>
+		<button id="view_player_info" onclick="view_player_info()">View Player Info</button>
+		<button id="dismantle_team" onclick="dismantle_team()">Dismantle Team</button>
+        <button id="back" onclick="goBack()">Back</button>
+	</div>
+
+	<div id="team_name_div" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: 	scroll; width:150px;height:150px;border:0px solid #000;">
+		<select id="team_names" name="t_names" multiple="">
+		</select>
+	</div>
+
+</BODY>

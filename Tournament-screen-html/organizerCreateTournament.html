@@ -1,0 +1,53 @@
+<HTML> 
+<HEAD>  </HEAD>
+<BODY> 
+<script language="javascript" type="text/javascript">
+window.onload = function loadExisting(){
+	if(window.location.hash.substring(1) != "New"){
+		if(window.location.hash.substring(1) == "OverbrookTournament"){
+			document.getElementById("nameheader").innerHTML = "OverbrookTournament";
+			document.getElementById("t_name").value = "Overbrook Tournament";
+			document.getElementById("no_of_teams").value = "7";
+			document.getElementById("organizer_name").value = "merica";
+			document.getElementById("contact_email").value = "rjs369@drexel.edu";
+			document.getElementById("institution_name").value = "Overbrook School for the Blind";
+			document.getElementById("t_start_date").value = "2016-03-23";
+			document.getElementById("t_start_time").value = "10:00:00";
+			document.getElementById("sign_up_deadline").value = "2016-03-19";
+		}
+	}
+}
+function create()
+{
+	var t_name = document.getElementById("t_name").value;
+	var no_of_teams = document.getElementById("no_of_teams").value ;
+	var organizer_name = document.getElementById("organizer_name").value;
+	var contact_email = document.getElementById("contact_email").value;
+	var institution_name = document.getElementById("institution_name").value;
+	var t_start_date = document.getElementById("t_start_date").value;
+	var t_start_time = document.getElementById("t_start_time").value;
+	var sign_up_deadline = document.getElementById("sign_up_deadline").value;
+
+	alert("Tournament Created!");
+	window.history.back();
+}
+function cancel()
+{
+	window.location.href = "./OrganizerOpening.html";
+}
+</script>
+
+<H2 id="nameheader">Create New Tournament</H2>
+	Tournament Name: 		<input type="text" id="t_name" /><br/>
+    Number of teams: 		<input type="text" id="no_of_teams" /><br />
+    Name of the Organizer:  <input type="text" id="organizer_name" /><br />
+    Contact Email: 			<input type="text" id="contact_email" /><br />
+    Institution:		    <input type="text" id="institution_name" /><br /> <br/>
+    Tournament Start Date:  <input type="date" id="t_start_date"/><br/>
+    Tournament Start Time:  <input type="time" id="t_start_time"> <br/>
+    Sign Up Deadline: 		<input type="date" id="sign_up_deadline"/><br/>
+    <button id="create" onclick="create()">Create</button>
+   	<button id="cancel" onclick="cancel()">Cancel</button>
+
+</BODY>
+</HTML>

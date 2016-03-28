@@ -1,0 +1,38 @@
+<HTML> 
+<BODY> 
+<script language="javascript" type="text/javascript">
+function login() 
+{
+	if(document.getElementById('txtusername').value == 'merica' &&
+		document.getElementById('txtpassword').value == 'password'){
+		window.location.href = "./OrganizerOpening.html";
+	}
+	if(document.getElementById('txtusername').value == 'uberryans' &&
+		document.getElementById('txtpassword').value == 'password'){
+		window.location.href = "./PlayerOpening.html";
+	}
+	/*if (document.getElementById('txtusername').value == 'organizer'  && document.getElementById('txtpassword').value == 'x')
+	{
+		    window.location.href = "./OrganizerOpening.html";
+	}
+	else if (document.getElementById('txtusername').value == 'player'  && document.getElementById('txtpassword').value == 'x')
+	{
+		window.location.href = "./PlayerOpening.html";
+	}*/
+}
+function createUser(){
+	window.location.href = "./CreateUser.html";
+}
+</script>
+<div style="width: 500px; margin: 300px auto 0 auto;">
+	<H2>Login</H2>
+   
+     <input type="text" id="txtusername" value="Username" /><br />
+     <input type="text" id="txtpassword" value="Password" /><br />
+     <button id="login" value="login" onclick ="login()"> Login </button>
+     <button id="createUser" onclick="createUser()">Create User</button>
+   
+ </div> 
+
+</BODY>
+</HTML>

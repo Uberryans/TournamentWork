@@ -1,0 +1,48 @@
+<HTML> 
+<HEAD>  </HEAD>
+<BODY> 
+<script language="javascript" type="text/javascript">
+function create_new() 
+{
+    window.location.href = "./organizerCreateTournament.html#New";
+}
+function edit_existing() 
+{
+    if(document.getElementById("t_names").value == "Overbrook Tournament"){
+    	window.location.href = "./organizerCreateTournament.html#OverbrookTournament";
+    }
+    else{
+    	alert("No Tournament Selected!");
+    }
+}
+function view_requests() 
+{
+    window.location.href = "./OrganizerViewRequests.html";
+}
+function view_brackets()
+{
+    window.location.href = "./OrganizerSetBracket.html";
+}
+function logout(){
+	window.location.href = "./Login.html";
+}
+
+</script>
+
+<H2>Welcome!</H2>
+<br/>
+<H3> Your Events </H3>
+<div id="entrants_name_div" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+	<select id="t_names" multiple>
+		<option id="t_name_1" value="Overbrook Tournament"> Overbrook Tournament</option> 
+	</select>
+</div>
+<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+	<button id="create_new" onclick="create_new()">Create New</button>
+	<button id="edit_existing" onclick="edit_existing()">Edit Existing</button>
+	<button id="view_requests" onclick="view_requests()">View Requests</button>
+	<button id="view_bracket" onclick="view_brackets()">View Bracket</button>
+	<button id="logout" onclick="logout()">Logout</button>
+</div>
+	
+</BODY>

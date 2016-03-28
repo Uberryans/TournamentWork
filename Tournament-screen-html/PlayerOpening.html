@@ -1,0 +1,43 @@
+<HTML> 
+<HEAD>  </HEAD>
+<BODY> 
+<script language="javascript" type="text/javascript">
+function search_tournament()
+{
+	window.location.href = "./PlayerSearchTournaments.html";
+}
+
+function view_tournament_info()
+{
+	var selected = document.getElementById("t_names").value;
+	var plug = removeSpaces(selected);
+	window.location.href = "./PlayerTournamentInfo.html#" + plug;
+}
+
+function logout(){
+	window.location.href = "./Login.html";
+}
+function removeSpaces(remove){
+	var test = remove.replace(/\s+/g, '');
+	return test;
+}
+
+</script>
+	<H2>Welcome, Uberryans</H2>	
+		<div id="entrants_name_div" style="margin-left: 0px; float: left; margin-top: 75px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+			<button id="search_tournament" onclick="search_tournament()">Search Tournaments</button>			
+			<button id="view_tournament_info" onclick="view_tournament_info()">View Tournament Info</button>
+			<button id="logout" onclick="logout()">Logout</button>
+		</div>
+		<div id="entered_tournaments" style="margin-left: 50px; float: left; width:200px;height:200px;solid #000;">
+			<p >Entered Tournaments </p>
+		
+			<div id="tournament_name" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+				<select id="t_names"  multiple>
+					<option id="t_name_1" value="Overbrook Tournament"> Overbrook Tournament </option> 
+					<option id="t_name_2" value="Drexel Tournament"> Drexel Tournament </option> 
+				</select>			
+			</div>
+		</div>
+		
+</BODY>

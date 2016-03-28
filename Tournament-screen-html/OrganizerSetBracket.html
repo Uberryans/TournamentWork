@@ -1,0 +1,103 @@
+<HTML> 
+<HEAD>  </HEAD>
+<script language="javascript" type="text/javascript">
+var divCount = 1;
+var divAdd = 0;
+var makeDivs;
+window.onload = function createBracket(){
+	var elem = document.getElementById("team_names");
+	var children = getCount(elem, false);
+	makeDivs = children / 2;
+	for(i = 1; i <= makeDivs; i++){
+		var newDiv = document.createElement("div");
+		newDiv.style.width = "100px";
+		newDiv.style.height = "100px";
+		var test = i;
+		newDiv.innerHTML = "Bracket " + test;
+		newDiv.id = "bracket_" + test;
+		document.body.appendChild(newDiv);
+	}
+}
+
+function getCount(parent, getChildrensChildren){
+    var relevantChildren = 0;
+    var children = parent.childNodes.length;
+    for(var i=0; i < children; i++){
+        if(parent.childNodes[i].nodeType != 3){
+            if(getChildrensChildren)
+                relevantChildren += getCount(parent.childNodes[i],true);
+            relevantChildren++;
+        }
+    }
+    return relevantChildren;
+}
+
+function addTeam(name){
+	if(divCount <= makeDivs){
+		var teams = document.getElementById("team_names");
+		var curDiv = "bracket_" + divCount;
+		var toDiv = document.getElementById(curDiv);
+		var curBut = document.getElementById(name);
+		var opt = document.createElement("option");
+		opt.innerHTML = name;
+		opt.value = name;
+		toDiv.appendChild(opt);
+		divAdd = divAdd + 1;
+		if(divAdd == 2){
+			divCount = divCount + 1;
+			divAdd = 0;
+		}
+		teams.removeChild(curBut);
+	}
+}
+function generateRandlist(){
+	var randArr = [];
+	var elem = document.getElementById("team_names");
+	var children = getCount(elem, false);
+	while(randArr.length < children){
+		var randNum = Math.ceil(Math.random()*children);
+		var found = false;
+		for(var i = 0; i < randArr.length; i++){
+			if(randArr[i] == randNum){
+				found = true;
+				break;
+			}
+		}
+		if(!found){
+			randArr[randArr.length] = randNum;
+		}
+	}
+	return randArr;
+}
+
+function randomSeeds(){
+	var arr = generateRandlist();
+	for(var i = 0; i < arr.length; i++){
+		var cur = "team" + arr[i];
+		addTeam(cur);
+	}
+}
+
+function goBack(){
+	window.history.back();
+}
+
+</script>
+<BODY> 
+	<H2>Bracket Setup</H2>
+	<br/>
+	<H3 align="center"> Winner:  </H3>
+	<button id = "randomize_bracket" onclick="randomSeeds()">Randomize Bracket</button>
+	<br/>
+	<button id="back" onclick="goBack()">Back</button>
+	<div id="team_names" style="overflow-y: scroll; width:150px;height:75px;border:1px solid #000;">
+		<button id="team1" onclick="addTeam('team1')">team1</button>
+		<button id="team2" onclick="addTeam('team2')">team2</button>
+		<button id="team3" onclick="addTeam('team3')">team3</button>
+		<button id="team4" onclick="addTeam('team4')">team4</button>
+		<button id="team5" onclick="addTeam('team5')">team5</button>
+		<button id="team6" onclick="addTeam('team6')">team6</button>
+		<button id="team7" onclick="addTeam('team7')">team7</button>
+		<button id="team8" onclick="addTeam('team8')">team8</button>
+	</div>
+</BODY>

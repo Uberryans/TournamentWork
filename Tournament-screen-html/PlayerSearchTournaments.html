@@ -1,0 +1,41 @@
+<HTML> 
+<HEAD>  </HEAD>
+<BODY> 
+<script language="javascript" type="text/javascript">
+
+function send_join_request()
+{
+	alert("Join Request sent");
+}
+
+function view_tournament_info()
+{
+	var selected = document.getElementById("t_names").value;
+	var plug = removeSpaces(selected);
+	window.location.href = "./PlayerTournamentInfo.html#" + plug;
+}
+
+function removeSpaces(remove){
+	var test = remove.replace(/\s+/g, '');
+	return test;
+}
+
+function goBack(){
+	window.history.back();
+}
+
+</script>
+	<H2>Tournament Search</H2>	
+		<div id="tournament_search" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+			<select id="t_names"  multiple>
+					<option id="t_name_1" value="Temple Tournament"> Temple Tournament </option> 
+					<option id="t_name_2" value="Villanova Tournament"> Villanova Tournament </option> 
+			</select>		
+		</div>
+		<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+			<button id="send_join_request" onclick="send_join_request()">Send Join Request</button>
+			<button id="view_tournament_info" onclick="view_tournament_info()">View 
+			Tournament Info</button>
+			<button id="back" onclick="goBack()">Back</button>
+		</div>
+</BODY>

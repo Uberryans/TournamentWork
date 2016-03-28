@@ -1,0 +1,62 @@
+<HTML>
+<HEAD> </HEAD>
+<BODY>
+<script language="javascript" type="text/javascript">
+window.onload = function fill(){
+	if(window.location.hash.substring(1) == "OverbrookTournament"){
+		var fill = document.getElementById("nameheader").innerHTML + "Overbrook Tournament";
+		document.getElementById("nameheader").innerHTML = fill;
+		fill = document.getElementById("name").innerHTML + "Overbrook Tournament";
+		document.getElementById("name").innerHTML = fill;
+		fill = document.getElementById("teams").innerHTML + "7";
+		document.getElementById("teams").innerHTML = fill;
+		fill = document.getElementById("organizer").innerHTML + "merica";
+		document.getElementById("organizer").innerHTML = fill;
+		fill = document.getElementById("email").innerHTML + "rjs369@drexel.edu";
+		document.getElementById("email").innerHTML = fill;
+		fill = document.getElementById("inst").innerHTML + "Overbrook School for the Blind";
+		document.getElementById("inst").innerHTML = fill;
+		fill = document.getElementById("startdate").innerHTML + "3/23/2016";
+		document.getElementById("startdate").innerHTML = fill;
+		fill = document.getElementById("starttime").innerHTML + "10:00 AM";
+		document.getElementById("starttime").innerHTML = fill;
+		fill = document.getElementById("deadline").innerHTML + "3/19/2016";
+		document.getElementById("deadline").innerHTML = fill;
+	}
+	if(window.location.hash.substring(1) == "TempleTournament"){
+		var fill = document.getElementById("nameheader").innerHTML + "Temple Tournament";
+		document.getElementById("nameheader").innerHTML = fill;
+		fill = document.getElementById("name").innerHTML + "Temple Tournament";
+		document.getElementById("name").innerHTML = fill;
+		fill = document.getElementById("teams").innerHTML + "15";
+		document.getElementById("teams").innerHTML = fill;
+		fill = document.getElementById("organizer").innerHTML + "dudley15";
+		document.getElementById("organizer").innerHTML = fill;
+		fill = document.getElementById("email").innerHTML + "jma57@temple.edu";
+		document.getElementById("email").innerHTML = fill;
+		fill = document.getElementById("inst").innerHTML + "Temple University";
+		document.getElementById("inst").innerHTML = fill;
+		fill = document.getElementById("startdate").innerHTML + "3/30/2016";
+		document.getElementById("startdate").innerHTML = fill;
+		fill = document.getElementById("starttime").innerHTML + "11:00 AM";
+		document.getElementById("starttime").innerHTML = fill;
+		fill = document.getElementById("deadline").innerHTML + "3/25/2016";
+		document.getElementById("deadline").innerHTML = fill;
+	}
+}
+function goBack(){
+	window.history.back();
+}
+</script>
+<H2 id="nameheader"> </H2>
+	<p id="name">Tournament Name: </p>
+	<p id="teams">Number of Teams: </p>
+	<p id="organizer">Name of the Organizer: </p>
+	<p id="email">Contact Email: </p>
+	<p id="inst">Institution: </p>
+	<p id="startdate">Tournment Start Date: </p>
+	<p id="starttime">Tournemnt Start Time: </p>
+	<p id="deadline">Sign Up Deadline: </p>
+	<button id="back" onclick="goBack()">Back</button>
+</BODY>
+</HTML>
