@@ -1,5 +1,48 @@
 <HTML>
 <BODY>
+<style type="text/css">
+	body{
+		background-color: #D46a6a;
+	}
+
+	h1 {
+		color: #661141;
+		font-size: 30px;
+		text-align: center;
+	}
+	h2 {
+		color:#661141;
+		text-align: center;
+	}
+
+	input[type=text]{
+		background-color: #d49a6a;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height: 30px;
+		padding: 5px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+	}
+
+	button{
+		background-color: #AA5585;
+		border: none;
+		color: #440027;
+		padding: 5px 10px 5px 10px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+
+	select{
+		padding: 5px 10px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+		background-color: #d49a6a;
+	}
+
+</style>
 <script language="javascript" type="text/javascript">
 function create(){
 	if(document.getElementById("password").value != document.getElementById("confirmPassword").value){
@@ -10,16 +53,20 @@ function create(){
 	alert("User has been created!");
 }
 </script>
-<H2> Create User </H2>
-	Username: <input type="text" id="username"/><br/>
-	Password: <input type="text" id="password"/><br/>
-	Confirm Password: <input type="text" id="confirmPassword"/><br/>
-	Role: 	<select>
-			<option value="Organizer">Organizer</option>
-			<option value="Player">Player</option>
-			</select><br/>
-	Contact Email: <input type="text" id="email"/><br/>
-	<button id="createUser" onclick="create()">Create User</button>
-	<button id="cancel" onclick="cancel()">Cancel</button>
+<h2> 
+	<div>
+		<h1>Create User</h1>
+		Username: <input type="text" id="username"/><br/>
+		Password: <input type="text" id="password"/><br/>
+		Confirm Password: <input type="text" id="confirmPassword"/><br/>
+		Role: 	<select>
+				<option value="Organizer">Organizer</option>
+				<option value="Player">Player</option>
+				</select><br/>
+		Contact Email: <input type="text" id="email"/><br/>
+		<button id="createUser" onclick="create()">Create User</button>
+		<button id="cancel" onclick="cancel()">Cancel</button>
+	</div>
+</h2>
 </BODY>
 </HTML>

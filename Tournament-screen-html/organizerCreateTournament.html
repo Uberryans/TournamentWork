@@ -1,6 +1,50 @@
 <HTML> 
 <HEAD>  </HEAD>
 <BODY> 
+<style type="text/css">
+	body{
+		background-color: #D46a6a;
+	}
+
+	h1 {
+		color: #661141;
+		font-size: 30px;
+		text-align: center;
+	}
+	h2 {
+		color:#661141;
+		text-align: left;
+	}
+
+	input{
+		background-color: #d49a6a;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height: 30px;
+		padding: 5px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+	}
+
+	button{
+		background-color: #AA5585;
+		border: none;
+		color: #440027;
+		padding: 5px 10px 5px 10px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+
+	select{
+		width:200px;
+		height:200px;
+		padding: 5px 10px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+		background-color: #d49a6a;
+	}
+</style>
 <script language="javascript" type="text/javascript">
 window.onload = function loadExisting(){
 	if(window.location.hash.substring(1) != "New"){
@@ -37,7 +81,9 @@ function cancel()
 }
 </script>
 
-<H2 id="nameheader">Create New Tournament</H2>
+<h1 id="nameheader">Create New Tournament</h1>
+<div id="tournament" style="margin-left: 600px">
+	<h2>
 	Tournament Name: 		<input type="text" id="t_name" /><br/>
     Number of teams: 		<input type="text" id="no_of_teams" /><br />
     Name of the Organizer:  <input type="text" id="organizer_name" /><br />
@@ -48,6 +94,7 @@ function cancel()
     Sign Up Deadline: 		<input type="date" id="sign_up_deadline"/><br/>
     <button id="create" onclick="create()">Create</button>
    	<button id="cancel" onclick="cancel()">Cancel</button>
-
+   	</h2>
+</div>
 </BODY>
 </HTML>

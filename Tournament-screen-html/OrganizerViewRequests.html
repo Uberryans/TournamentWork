@@ -1,5 +1,49 @@
 <HTML> 
 <BODY> 
+<style type="text/css">
+    body{
+        background-color: #D46a6a;
+    }
+
+    h1 {
+        color: #661141;
+        font-size: 30px;
+        text-align: center;
+    }
+    h2 {
+        color:#661141;
+        text-align: left;
+    }
+
+    input{
+        background-color: #d49a6a;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 30px;
+        padding: 5px;
+        border: 2px solid #804515;
+        border-radius: 4px;
+    }
+
+    button{
+        background-color: #AA5585;
+        border: none;
+        color: #440027;
+        padding: 5px 10px 5px 10px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    select{
+        width:200px;
+        height:200px;
+        padding: 5px 10px;
+        border: 2px solid #804515;
+        border-radius: 4px;
+        background-color: #d49a6a;
+    }
+</style>
 <script language="javascript" type="text/javascript">
 var no_of_teams = 1;
 function create_team() 
@@ -91,9 +135,9 @@ function goBack(){
 </script>
 
 	<H2>Tournament Requests</H2>
-	<H3> Player Requests  </H3>
+	<h2> Player Requests  </h2>
 	
-	<div id="entrants_name_div" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: 	scroll; width:150px;height:150px;border:0px solid #000;">
+	<div id="entrants_name_div" style="margin-left: 0px; float: left; margin-top: 0px;  width:200px;height:200px;border:0px solid #000;">
 		<select id="player_names" name="entrant_names" multiple>
 			<option id="Richa" value="Richa"> Richa </option> 
 			<option id="Buzz" value="Buzz"> Buzz </option> 
@@ -101,7 +145,7 @@ function goBack(){
 		</select>
 	</div>
 
-	<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+	<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; width:150px;height:150px;border:0px solid #000;">
 		<button id="create_team" onclick="create_team()">Create Team</button>
 		<button id="add_player_to_team" onclick="add_player()">Add Player to Team</button>
 		<button id="view_player_info" onclick="view_player_info()">View Player Info</button>
@@ -109,7 +153,7 @@ function goBack(){
         <button id="back" onclick="goBack()">Back</button>
 	</div>
 
-	<div id="team_name_div" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: 	scroll; width:150px;height:150px;border:0px solid #000;">
+	<div id="team_name_div" style="margin-left: 50px; float: left; margin-top: 0px; width:200px;height:200px;border:0px solid #000;">
 		<select id="team_names" name="t_names" multiple="">
 		</select>
 	</div>

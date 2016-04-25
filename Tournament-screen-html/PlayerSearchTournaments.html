@@ -1,6 +1,50 @@
 <HTML> 
 <HEAD>  </HEAD>
 <BODY> 
+<style type="text/css">
+	body{
+		background-color: #D46a6a;
+	}
+
+	h1 {
+		color: #661141;
+		font-size: 30px;
+		text-align: center;
+	}
+	h2 {
+		color:#661141;
+		text-align: left;
+	}
+
+	input{
+		background-color: #d49a6a;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height: 30px;
+		padding: 5px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+	}
+
+	button{
+		background-color: #AA5585;
+		border: none;
+		color: #440027;
+		padding: 5px 10px 5px 10px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+
+	select{
+		width:200px;
+		height:200px;
+		padding: 5px 10px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+		background-color: #d49a6a;
+	}
+</style>
 <script language="javascript" type="text/javascript">
 
 function send_join_request()
@@ -26,13 +70,13 @@ function goBack(){
 
 </script>
 	<H2>Tournament Search</H2>	
-		<div id="tournament_search" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+		<div id="tournament_search" style="margin-left: 0px; float: left; margin-top: 0px; width:200px;height:200px;border:0px solid #000;">
 			<select id="t_names"  multiple>
 					<option id="t_name_1" value="Temple Tournament"> Temple Tournament </option> 
 					<option id="t_name_2" value="Villanova Tournament"> Villanova Tournament </option> 
 			</select>		
 		</div>
-		<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+		<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px;  width:200px;height:200px;border:0px solid #000;">
 			<button id="send_join_request" onclick="send_join_request()">Send Join Request</button>
 			<button id="view_tournament_info" onclick="view_tournament_info()">View 
 			Tournament Info</button>

@@ -1,6 +1,50 @@
 <HTML> 
 <HEAD>  </HEAD>
 <BODY> 
+<style type="text/css">
+	body{
+		background-color: #D46a6a;
+	}
+
+	h1 {
+		color: #661141;
+		font-size: 30px;
+		text-align: center;
+	}
+	h2 {
+		color:#661141;
+		text-align: center;
+	}
+
+	input[type=text]{
+		background-color: #d49a6a;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height: 30px;
+		padding: 5px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+	}
+
+	button{
+		background-color: #AA5585;
+		border: none;
+		color: #440027;
+		padding: 5px 10px 5px 10px;
+		text-decoration: none;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+
+	select{
+		width:200px;
+		height:200px;
+		padding: 5px 10px;
+		border: 2px solid #804515;
+		border-radius: 4px;
+		background-color: #d49a6a;
+	}
+</style>
 <script language="javascript" type="text/javascript">
 function create_new() 
 {
@@ -29,20 +73,23 @@ function logout(){
 
 </script>
 
-<H2>Welcome!</H2>
+
 <br/>
-<H3> Your Events </H3>
-<div id="entrants_name_div" style="margin-left: 0px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+<h2>
+<h1> Welcome! </h1>
+<h1> Your Events </h1>
+<div id="entrants_name_div" style="margin-left: 600px; float: left; margin-top: 0px; width:200px;height:200px;border:0px solid #000;">
 	<select id="t_names" multiple>
 		<option id="t_name_1" value="Overbrook Tournament"> Overbrook Tournament</option> 
 	</select>
 </div>
-<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px; overflow-y: scroll; width:150px;height:150px;border:0px solid #000;">
+<div id="options_button_div" style="margin-left: 50px; float: left; margin-top: 0px;  width:150px;height:200px;border:0px solid #000;">
 	<button id="create_new" onclick="create_new()">Create New</button>
 	<button id="edit_existing" onclick="edit_existing()">Edit Existing</button>
 	<button id="view_requests" onclick="view_requests()">View Requests</button>
 	<button id="view_bracket" onclick="view_brackets()">View Bracket</button>
 	<button id="logout" onclick="logout()">Logout</button>
 </div>
+</h2>
 	
 </BODY>
